@@ -1,0 +1,1 @@
+To move your character, type the direction you'd like to go - for example, 'n' or 'north' will move your character to the North, IF there is a path in that direction.

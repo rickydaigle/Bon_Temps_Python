@@ -1,0 +1,43 @@
+#!/usr/bin/env python3
+
+from player import Player
+
+def main():
+    print("Creating BuzzyBoi...")
+    newPlayer = Player("BuzzyBoi")
+    print("Name: (3 times)")
+    print(newPlayer.print_name())
+    print(newPlayer.print_name_title())
+    print(newPlayer.get_name())
+    print("Health:")
+    print(newPlayer.get_health())
+    print("Attack")
+    print(newPlayer.get_attack())
+    print("Defense")
+    print(newPlayer.get_defense())
+    print("Level")
+    print(newPlayer.get_level())
+    print("Leveling Up...")
+    newPlayer.level_up()
+    print("Health:")
+    print(newPlayer.get_health())
+    print("Attack")
+    print(newPlayer.get_attack())
+    print("Defense")
+    print(newPlayer.get_defense())
+    print("Level")
+    print(newPlayer.get_level())
+    print("Leveling Up...")
+    newPlayer.level_up()
+    print("Health:")
+    print(newPlayer.get_health())
+    print("Attack")
+    print(newPlayer.get_attack())
+    print("Defense")
+    print(newPlayer.get_defense())
+    print("Level")
+    print(newPlayer.get_level())
+    input("Press Enter to exit test...")
+
+if __name__ == "__main__":
+    main()
