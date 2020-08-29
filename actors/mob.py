@@ -3,7 +3,11 @@
 class Mob:
 
     MOB_LIST = [
-        {"name":"Wandering Nutria", "level":1, "maxHealth":15, "attack":6, "defense":3, "defenseChance":0.1, "exp":15, "bones":5.00, "attackVerb":"bite", "defenseVerb":"avoid"}
+        {"name":"Giant Nutria", "level":1, "maxHealth":15, "attack":6, "defense":3, "defenseChance":0.1, "exp":15, "bones":5, "attackVerb":"bite", "defenseVerb":"avoid"},
+        {"name":"T'Frere", "level":8, "maxHealth":260, "attack":19, "defense":11, "defenseChance":0.25, "exp":3500, "bones":150, "attackVerb":"haunt", "defenseVerb":"absorb"},
+        {"name":"Rougarou", "level":3, "maxHealth":50, "attack":9, "defense":6, "defenseChance":0.1, "exp":60, "bones":15, "attackVerb":"slash", "defenseVerb":"block"},
+        {"name":"Tataille", "level":2, "maxHealth":25, "attack":7, "defense":5, "defenseChance":0.1, "exp":30, "bones":10, "attackVerb":"haunt", "defenseVerb":"absorb"},
+        {"name":"Man-eating Gator", "level":4, "maxHealth":60, "attack":10, "defense":6, "defenseChance":0.1, "exp":120, "bones":65, "attackVerb":"haunt", "defenseVerb":"absorb"}
         ]
   
     def __init__(self, listNumber, mobID):

@@ -49,7 +49,7 @@ def start_game(player):
             elif choice.lower() == "inventory":
                 check_inventory(player)          
             elif (choice.lower() == "n" or choice.lower() == "s" or choice.lower() == "e" or
-                  choice.lower() == "w" or choice.lower() == "u" or choice.lower() == "n"):
+                  choice.lower() == "w" or choice.lower() == "u" or choice.lower() == "d"):
                 newX, newY, newZ = update_player_location(choice)
                 player.update_location(newX, newY, newZ)
             if mobIds:
@@ -111,7 +111,7 @@ def check_inventory(player):
 
 def check_for_classes(player, itemClass):
     playerClass = player.get_class()
-    useClasses = ["newb"]
+    useClasses = ["newb", "health"]
     if playerClass == "hunter":
         useClasses.append(playerClass)
     elif playerClass == "voodoo":
@@ -138,7 +138,7 @@ def get_npc_options(name, player):
     elif npcType == "items":
         itemPage = Items.ITEMS
     elif npcType == "quest":
-        print("\n{} says {}".format(name.capitalize(), npcWelcome)) # REMOVE
+        print("\n{} says '{}'".format(name.capitalize(), npcWelcome)) # REMOVE
         print("You're not sure about this guy yet, so you ignore him.") # REMOVE
     waresList = []
     if itemPage:

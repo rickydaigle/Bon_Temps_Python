@@ -6,7 +6,8 @@ class Npc:
         "patackus":{"desc":"an old man", "type":"quest", "welcome":"Come see over here T, you look like you lost."},
         "amos":{"desc":"the Blacksmith", "type":"weapons", "welcome":"Hey cuz, you interested in a new weapon?"},
         "swiff":{"desc":"the Tailor", "type":"armor", "welcome":"We got the finest clothes in Acadia, bruh!"},
-        "jables":{"desc":"of the Dee", "type":"items", "welcome":"I got the hottest links and the best prices, me!"}
+        "jables":{"desc":"of the Dee", "type":"items", "welcome":"I got the hottest links and the best prices, me!"},
+        "morris":{"desc":"Bart", "type":"quest", "welcome":"One call, that's all!"}
         }
     
     def print_desc(npc):

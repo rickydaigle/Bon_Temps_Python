@@ -40,14 +40,26 @@ class Player:
         if x != 0:
             old_x = self.currentLocation["x"]
             new_x = old_x + x
+            if new_x == -1:
+                new_x = 99
+            elif new_x == 100:
+                new_x = 0
             self.currentLocation["x"] = new_x
         if y != 0:
             old_y = self.currentLocation["y"]
             new_y = old_y + y
+            if new_y == -1:
+                new_y = 99
+            elif new_y == 100:
+                new_y = 0
             self.currentLocation["y"] = new_y
         if z != 0:
             old_z = self.currentLocation["z"]
             new_z = old_z + z
+            if new_z == -1:
+                new_z = 99
+            elif new_z == 100:
+                new_z = 0
             self.currentLocation["z"] = new_z
 
     def check_titles(self):
