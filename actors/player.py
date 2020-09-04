@@ -30,6 +30,19 @@ class Player:
         self.currentLocation = {"x":0, "y":0, "z":0}
         self.inventory = []
 
+    def change_class(self, className):
+        if self.playerClass == "newb":
+            self.playerClass = className
+            return True
+        elif self.playerClass == "hunter" and className == "hero":
+            self.playerClass = classname
+            return True
+        elif self.playerClass == "voodoo" and className == "mambo":
+            self.playerClass == className
+            return True
+        else:
+            return False
+
     def get_location(self):
         x = self.currentLocation["x"]
         y = self.currentLocation["y"]

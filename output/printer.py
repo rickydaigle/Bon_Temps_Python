@@ -53,6 +53,15 @@ class Printer:
         print("\n|| Sorry, your class can't buy that.")
         Printer.wait_for_input()
 
+    def npc_not_ready(name, player):
+        print("\n{} says '{}'".format(name.capitalize(), npcWelcome))
+        print("You're not sure about this guy yet, so you ignore him.")
+        Printer.wait_for_input()
+
+    def already_chosen(name, player):
+        print("\n{} says 'You've already chosen your class, {}'".format(name.capitalize(), player.get_class().capitalize()))
+        Printer.wait_for_input()
+
     def back_to_main():
         print("\n|| Quitting to main menu...")
 

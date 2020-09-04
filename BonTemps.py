@@ -140,6 +140,7 @@ def get_npc_options(name, player):
     elif npcType == "quest":
         print("\n{} says '{}'".format(name.capitalize(), npcWelcome)) # REMOVE
         print("You're not sure about this guy yet, so you ignore him.") # REMOVE
+        Printer.wait_for_input()  # REMOVE
     waresList = []
     if itemPage:
         for e, each in enumerate(itemPage):
