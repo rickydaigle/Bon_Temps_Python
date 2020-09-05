@@ -155,7 +155,7 @@ class Map:
            "exits":["n", "s", "e", "w"]}, #01,01,00 / #3
 
          {"name":"LA'FAYETTE CEMETARY",
-           "description":"At the north end of Evangeline Thruway sits the city's cemetary. It seems kind of spooky here. A beautiful is north of here.",
+           "description":"At the north end of Evangeline Thruway sits the city's cemetary. It seems kind of spooky here. A beautiful cathedral is north of here.",
            "npc":[], "mob":[0], "mob_chance":[0.25], "mob_max":[3], "room_level":1, "room_type":1,
            "exits":["n", "s"]}, #01,02,00 / #4
 
@@ -190,7 +190,7 @@ class Map:
            "exits":["d"]}, #02,02,01 / #10
 
          {"name":"GARY STREET (100 BLOCK)",
-           "description":"Gary Street runs west from the Thruwau, leading to the Iberian cane fields. There is an advocate's office to the north.",
+           "description":"Gary Street runs west from the Thruway, leading to the Iberian cane fields. There is an advocate's office to the north.",
            "npc":[], "mob":[], "mob_chance":[], "mob_max":[], "room_level":1, "room_type":1,
            "exits":["n", "e", "w"]}, #00,01,00 / #11
 
@@ -205,7 +205,7 @@ class Map:
            "exits":["e"]}, #00,99,00 / #13
 
          {"name":"GARY STREET (200 BLOCK)",
-           "description":"Gary Street runs west from the Thruwau, leading to the Iberian cane fields.",
+           "description":"Gary Street runs west from the Thruway, leading to the Iberian cane fields.",
            "npc":[], "mob":[], "mob_chance":[], "mob_max":[], "room_level":1, "room_type":1,
            "exits":["n", "w", "e"]}, #99,01,00 / #14
 

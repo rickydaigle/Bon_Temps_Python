@@ -258,7 +258,7 @@ class Printer:
         Printer.print_long_pounds()
         totalItems, itemNames = Printer.print_shop_format(wares, itemJust, nameJust, valueJust)
         for each in totalItems:
-            valid_choices.append(each[0])
+            valid_choices.append(each)
         Printer.print_long_pounds()
         print("Type the # of the item you want to buy or CANCEL to close this menu.")
         while validated == False:
@@ -371,6 +371,18 @@ class Printer:
         Printer.print_pounds()
         while validated == False:
             choice = input("What do you want to do? ")
+            if choice.lower() == "north":
+                choice = "n"
+            if choice.lower() == "south":
+                choice = "s"
+            if choice.lower() == "east":
+                choice = "e"
+            if choice.lower() == "west":
+                choice = "w"
+            if choice.lower() == "up":
+                choice = "u"
+            if choice.lower() == "down":
+                choice = "d"
             if choice.lower() == "inv":
                 choice = "inventory"
             if choice.lower() in valid_choices:
@@ -421,41 +433,41 @@ class Printer:
         defenseDiff = abs(playerDefense - mobDefense)
         print("\nYou study the {}...".format(mob.print_name()))
         if levelDiff < 1:
-            print("Your level seems about the same.")
+            print("Your level seems about the same as the ()'s.".format(mob.print_name()))
         elif levelDiff < 3:
             if playerLevel > mobLevel:
-                print("Your level seems higher.")
+                print("Your level seems higher than the ()'s.".format(mob.print_name()))
             else:
-                print("Your level seems lower.")
+                print("Your level seems lower than the ()'s.".format(mob.print_name()))
         else:
             if playerLevel > mobLevel:
-                print("Your level seems much higher.")
+                print("Your level seems much higher than the ()'s.".format(mob.print_name()))
             else:
-                print("Your level seems much lower.")     
+                print("Your level seems much lower than the ()'s.".format(mob.print_name()))     
         if attackDiff < 3:
-            print("Your attack power seems about the same.")
+            print("Your attack power seems about the same as the ()'s.".format(mob.print_name()))
         elif attackDiff < 3:
             if playerAttack > mobAttack:
-                print("Your attack power seems higher.")
+                print("Your attack power seems higher than the ()'s.".format(mob.print_name()))
             else:
-                print("Your attack power seems lower.")
+                print("Your attack power seems lower than the ()'s.".format(mob.print_name()))
         else:
             if playerAttack > mobAttack:
-                print("Your attack power seems much higher.")
+                print("Your attack power seems much higher than the ()'s.".format(mob.print_name()))
             else:
-                print("Your attack power seems much lower.")
+                print("Your attack power seems much lower than the ()'s.".format(mob.print_name()))
         if defenseDiff < 3:
-            print("Your defense power seems about the same.")
+            print("Your defense power seems about the same as the ()'s.".format(mob.print_name()))
         elif defenseDiff < 3:
             if playerDefense > mobDefense:
-                print("Your defense power seems higher.")
+                print("Your defense power seems higher than the ()'s.".format(mob.print_name()))
             else:
-                print("Your defense power seems lower.")
+                print("Your defense power seems lower than the ()'s.".format(mob.print_name()))
         else:
             if playerDefense > mobDefense:
-                print("Your defense power seems much higher.")
+                print("Your defense power seems much higher than the ()'s.".format(mob.print_name()))
             else:
-                print("Your defense power seems much lower.")
+                print("Your defense power seems much lower than the ()'s.".format(mob.print_name()))
         Printer.wait_for_input()
 
 def unit_test():
