@@ -36,7 +36,8 @@ def start_game(player):
             npcList = room.return_npcs()
             npcs = check_for_npcs(npcList)
             mobs, mobIds = check_for_mobs(room)
-            choice = Printer.game_menu(player, room, npcs, mobs)
+            mobPossible = room.mob_possible()
+            choice = Printer.game_menu(player, room, npcs, mobs, mobPossible)
             if choice.lower() == "quit":
                 Printer.back_to_main()
                 gameRunning = False
@@ -52,6 +53,8 @@ def start_game(player):
                   choice.lower() == "w" or choice.lower() == "u" or choice.lower() == "d"):
                 newX, newY, newZ = update_player_location(choice)
                 player.update_location(newX, newY, newZ)
+            elif choice.lower() == "search":
+                Printer.search_for_mob()
             if mobIds:
                 if choice in mobIds:
                     interact_with_mob(mobs[int(choice)-1], player)
@@ -138,9 +141,7 @@ def get_npc_options(name, player):
     elif npcType == "items":
         itemPage = Items.ITEMS
     elif npcType == "quest":
-        print("\n{} says '{}'".format(name.capitalize(), npcWelcome)) # REMOVE
-        print("You're not sure about this guy yet, so you ignore him.") # REMOVE
-        Printer.wait_for_input()  # REMOVE
+        Printer.talk_to_quest(name, player, npcWelcome)
     waresList = []
     if itemPage:
         for e, each in enumerate(itemPage):

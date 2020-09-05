@@ -36,27 +36,26 @@ class Printer:
 
     def already_exists():
         print("\n|| That player already exists. Try loading a saved game.")
-        Printer.wait_for_input()
 
     def item_bought(itemBought):
         print("\n|| {} purchased.".format(itemBought))
 
     def inv_empty():
         print("\n|| There is nothing in your inventory.")
-        Printer.wait_for_input()
 
     def cant_afford():
         print("\n|| Sorry, you can't afford that.")
-        Printer.wait_for_input()
 
     def cant_use():
         print("\n|| Sorry, your class can't buy that.")
-        Printer.wait_for_input()
 
     def npc_not_ready(name, player):
         print("\n{} says '{}'".format(name.capitalize(), npcWelcome))
         print("You're not sure about this guy yet, so you ignore him.")
         Printer.wait_for_input()
+
+    def search_for_mob():
+        print("\n|| You search the area for mobs...")
 
     def already_chosen(name, player):
         print("\n{} says 'You've already chosen your class, {}'".format(name.capitalize(), player.get_class().capitalize()))
@@ -274,6 +273,17 @@ class Printer:
             else:
                 Printer.invalid_choice()
 
+    def talk_to_quest(name, player, npcWelcome):
+        if name.lower() == "patackus":
+            patackusQuest = "{} says '{}'".format(name.capitalize(), npcWelcome) # REMOVE
+            print()
+            print(textwrap.fill(patackusQuest, 60)) # REMOVE
+            Printer.wait_for_input()  # REMOVE
+        else:
+            print("\n{} says '{}'".format(name.capitalize(), npcWelcome)) # REMOVE
+            print("You're not sure about this guy yet, so you ignore him.") # REMOVE
+            Printer.wait_for_input()  # REMOVE
+
     def get_all_lower(upperList):
         lowerList = []
         for each in upperList:
@@ -307,7 +317,6 @@ class Printer:
                 print(choice)
                 print(choice.lower())
                 Printer.invalid_choice()
-        
 
     def main_menu():
         validated = False
@@ -330,7 +339,7 @@ class Printer:
             else:
                 Printer.invalid_choice()
 
-    def game_menu(player, room, npcs, mobs):
+    def game_menu(player, room, npcs, mobs, mobPossible):
         validated = False
         valid_choices = ["help", "save", "quit", "stats", "inventory"]
         print()
@@ -363,6 +372,9 @@ class Printer:
             Printer.print_stars()
         for exits in room.return_exits():
             valid_choices.append(exits)
+        if mobPossible:
+            valid_choices.append("search")
+            print("SEARCH the room for mobs")
         print("INVENTORY check")
         print("STATS check")
         print("HELP text")
@@ -373,17 +385,17 @@ class Printer:
             choice = input("What do you want to do? ")
             if choice.lower() == "north":
                 choice = "n"
-            if choice.lower() == "south":
+            elif choice.lower() == "south":
                 choice = "s"
-            if choice.lower() == "east":
+            elif choice.lower() == "east":
                 choice = "e"
-            if choice.lower() == "west":
+            elif choice.lower() == "west":
                 choice = "w"
-            if choice.lower() == "up":
+            elif choice.lower() == "up":
                 choice = "u"
-            if choice.lower() == "down":
+            elif choice.lower() == "down":
                 choice = "d"
-            if choice.lower() == "inv":
+            elif choice.lower() == "inv":
                 choice = "inventory"
             if choice.lower() in valid_choices:
                 validated = True

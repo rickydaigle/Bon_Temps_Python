@@ -3,7 +3,7 @@
 class Npc:
 
     NPC_LIST = {
-        "patackus":{"desc":"an old man", "type":"quest", "classType":"", "welcome":"Come see over here T, you look like you lost."},
+        "patackus":{"desc":"an old man", "type":"quest", "classType":"", "welcome":"Come see over here T, you look like you lost. You should start out by heading 'nort' on da Evangeline 'Truway' to da cemetary and kill you some nutria. If you don't see 'anyting' at first, you can search da area and sometimes find 'em hidin'!"},
         "amos":{"desc":"the Blacksmith", "type":"weapons", "classType":"", "welcome":"Hey cuz, you interested in a new weapon?"},
         "swiff":{"desc":"the Tailor", "type":"armor", "classType":"", "welcome":"We got the finest clothes in Acadia, bruh!"},
         "jables":{"desc":"of the Dee", "type":"items", "classType":"", "welcome":"I got the hottest links and the best prices, me!"},

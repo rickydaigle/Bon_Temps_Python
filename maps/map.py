@@ -135,7 +135,7 @@ class Map:
     # TBD
     ROOM = [
          {"name":"THE CAJUN HEARTLAND WELCOME CENTER",
-           "description":"This large room is bright and open except for a huge pirogue statue in the middle of the room. Dozens of Acadian citizens are standing around, chatting in French. An old man approaches you and seems to want to talk.",
+           "description":"This large room is bright and open except for a huge pirogue statue in the middle of the room. Dozens of Acadian citizens are standing around, chatting in French. An old man approaches you and seems to want to talk. You should probably type his name to see what he wants.",
            "npc":["patackus"], "mob":[], "mob_chance":[], "mob_max":[], "room_level":0, "room_type":0,
            "exits":["e"]}, #00,00,00 / #0
 
@@ -668,6 +668,12 @@ class Map:
 
     def print_description(self):
         return str(self.description)
+
+    def mob_possible(self):
+        if self.mob:
+            return True
+        else:
+            return False
 
     def return_exits(self):
         return self.exits

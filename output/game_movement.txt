@@ -1,1 +1,1 @@
-To move your character, type the direction you'd like to go - for example, 'n' or 'north' will move your character to the North, IF there is a path in that direction.
+Each room or area that your character enters will have exits in one or more directions. To move your character, type the direction you'd like to go - for example, 'n' or 'north' will move your character to the North, IF there is a path in that direction. Some rooms also have exits up or down.
