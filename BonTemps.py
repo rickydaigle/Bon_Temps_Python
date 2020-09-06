@@ -133,7 +133,8 @@ def check_for_classes(player, itemClass):
 def get_npc_options(name, player):
     itemPage = False
     npcType = Npc.NPC_LIST[str(name)]["type"]
-    npcWelcome =Npc.NPC_LIST[str(name)]["welcome"]
+    npcWelcome = Npc.NPC_LIST[str(name)]["welcome"]
+    npcClass = Npc.NPC_LIST[str(name)]["classType"]
     if npcType == "weapons":
         itemPage = Weapons.WEAPONS
     elif npcType == "armor":
@@ -142,6 +143,8 @@ def get_npc_options(name, player):
         itemPage = Items.ITEMS
     elif npcType == "quest":
         Printer.talk_to_quest(name, player, npcWelcome)
+    elif npcType == "class":
+        Printer.get_new_class(name, player, npcWelcome, npcClass)
     waresList = []
     if itemPage:
         for e, each in enumerate(itemPage):
@@ -336,6 +339,7 @@ def start_new_game(SAVE_LOCATION):
         Printer.already_exists()
     else:
         player = Player(playerName)
+        Printer.print_instructions(HELP_LOCATION)
         start_game(player)
     
 

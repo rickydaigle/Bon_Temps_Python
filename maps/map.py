@@ -160,7 +160,7 @@ class Map:
            "exits":["n", "s"]}, #01,02,00 / #4
 
          {"name":"EVANGELINE THRUWAY (400 BLOCK)",
-           "description":"Clean, safe, and wide, Evangeline Thruway runs north and south through the heart of Vermilionville. There are a few Acadian citizens walking around. The Best Stop is to the east.",
+           "description":"Clean, safe, and wide, Evangeline Thruway runs north and south through the heart of Vermilionville. There are a few Acadian citizens walking around. The Best Stop is to the east and Prejean's is to the west.",
            "npc":[], "mob":[], "mob_chance":[], "mob_max":[], "room_level":1, "room_type":1,
            "exits":["n", "e", "s", "w"]}, #01,99,00 / #5
          
@@ -355,9 +355,9 @@ class Map:
            "exits":["n", "e", "w"]}, #05,00,00 / #43
 
          {"name":"EVANGELINE THRUWAY (300 BLOCK)",
-           "description":"Clean, safe, and wide, Evangeline Thruway runs north and south through the heart of Vermilionville. There are quite a few Acadian citizens walking around. Evangeline Downs is to the east.",
+           "description":"Clean, safe, and wide, Evangeline Thruway runs north and south through the heart of Vermilionville. There are quite a few Acadian citizens walking around. Evangeline Downs is to the east and UAV is to the west..",
            "npc":[], "mob":[], "mob_chance":[], "mob_max":[], "room_level":1, "room_type":1,
-           "exits":["n","s","e"]}, #01,98,00 / #44
+           "exits":["n","s","e", "w"]}, #01,98,00 / #44
 
          {"name":"EVANGELINE THRUWAY (200 BLOCK)",
            "description":"Clean, safe, and wide, Evangeline Thruway runs north and south through the heart of Vermilionville. There are a few Acadian citizens walking around.",
@@ -371,7 +371,7 @@ class Map:
 
          {"name":"ACADIA HIGHWAYMEN TROOP I",
            "description":"The Vermilionville HQ of the kingdom's highwaymen: troopers who keep the roads free of land pirates.",
-           "npc":[5], "mob":[], "mob_chance":[], "mob_max":[], "room_level":1, "room_type":0,
+           "npc":["martin"], "mob":[], "mob_chance":[], "mob_max":[], "room_level":1, "room_type":0,
            "exits":["e"]}, #00,96,00 / #47
 
          {"name":"I-10 MILE 103",
@@ -441,7 +441,7 @@ class Map:
 
          {"name":"ACADIA HIGHWAYMEN ATCHAFALAYA POST",
            "description":"The building itself looks run down, but the highwaymen milling around still keep clean-shaven faces and wear shiny armor.",
-           "npc":[7], "mob":[], "mob_chance":[], "mob_max":[], "room_level":1, "room_type":0,
+           "npc":["john"], "mob":[], "mob_chance":[], "mob_max":[], "room_level":1, "room_type":0,
            "exits":["e"]}, #03,93,00 / #61
 
          {"name":"ATCHAFALAYA SWAMP",
@@ -541,7 +541,7 @@ class Map:
 
          {"name":"ACADIA KINGDOM UNIVERSITY",
            "description":"The largest educational institute in the kingdom, AKU is where all of the best Voodoo Mambos studied.",
-           "npc":[9], "mob":[], "mob_chance":[], "mob_max":[], "room_level":1, "room_type":0,
+           "npc":["doctor"], "mob":[], "mob_chance":[], "mob_max":[], "room_level":1, "room_type":0,
            "exits":["n"]}, #07,93,00 / #81
 
          {"name":"TIGER STADIUM",
@@ -561,7 +561,7 @@ class Map:
 
          {"name":"ACADIA HIGHWAYMEN TROOP A",
            "description":"The main HQ of the Highwaymen is huge and noisy. Only the most experienced highwaymen in the kingdom get stationed here.",
-           "npc":[6], "mob":[], "mob_chance":[], "mob_max":[], "room_level":1, "room_type":0,
+           "npc":["harry"], "mob":[], "mob_chance":[], "mob_max":[], "room_level":1, "room_type":0,
            "exits":["w"]}, #08,96,00 / #85
          
          {"name":"RED CITY SHERIFF'S HQ",
@@ -621,7 +621,7 @@ class Map:
 
          {"name":"THE UNIVERSITY OF ACADIA AT VERMILIONVILLE",
            "description":"Although not as large or prestigious as the Kingdom of Acadia University, UAV produces Voodoos and Mambos that can certainly hold their own in a magic battle. Cajun Field and the Cajundome are further west.",
-           "npc":[8], "mob":[], "mob_chance":[], "mob_max":[], "room_level":1, "room_type":1,
+           "npc":["marie"], "mob":[], "mob_chance":[], "mob_max":[], "room_level":1, "room_type":1,
            "exits":["e", "w"]}, #00,98,00 / #97
 
          {"name":"CAJUN FIELD",

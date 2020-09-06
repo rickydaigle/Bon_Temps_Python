@@ -30,18 +30,21 @@ class Player:
         self.currentLocation = {"x":0, "y":0, "z":0}
         self.inventory = []
 
-    def change_class(self, className):
-        if self.playerClass == "newb":
-            self.playerClass = className
+    def check_class(self, className):
+        if self.playerClass == "newb" and self.level > 2:
+            if className == "hunter" or className == "voodoo":
+                return True
+            else:
+                return False
+        elif self.playerClass == "hunter" and className == "hero" and self.level > 9:
             return True
-        elif self.playerClass == "hunter" and className == "hero":
-            self.playerClass = classname
-            return True
-        elif self.playerClass == "voodoo" and className == "mambo":
-            self.playerClass == className
+        elif self.playerClass == "voodoo" and className == "mambo" and self.level > 9:
             return True
         else:
             return False
+
+    def new_class(self, className):
+        self.playerClass = className
 
     def get_location(self):
         x = self.currentLocation["x"]
@@ -125,6 +128,8 @@ class Player:
         self.attack += max(1, (int(round(self.attack * 0.25))))
         self.defense  += max(1,(int(round(self.defense * 0.25))))
         print("\nDING! You've reached a new level!")
+        if self.level == "3" or self.level == "10":
+            print("You should go talk to a class trainer now...")
 
     def player_alive(self):
         if self.isAlive == True:

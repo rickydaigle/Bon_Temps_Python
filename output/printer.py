@@ -290,6 +290,24 @@ class Printer:
             lowerList.append(each.lower())
         return lowerList
 
+    def get_new_class(name, player, npcWelcome, npcClass):
+        playerLevel = player.get_level()
+        if playerLevel > 2:
+            print("\n{} says '{}'".format(name.capitalize(), npcWelcome))
+            Printer.print_stars()
+            confirm = input("This class trainer can teach you to be a {}. This cannot be undone. Do you want to proceed? (y/n) ".format(npcClass.capitalize()))
+            if confirm == "yes" or confirm == "y":
+                if player.check_class(npcClass):
+                    player.new_class(npcClass)
+                    print("Congratulations on your new profession, {}!".format(npcClass.capitalize()))
+                    Printer.wait_for_input()
+                else:
+                    print("Sorry, you can't train to be this class right now.")
+                    Printer.wait_for_input()
+        else:
+            print("\n{} says 'Come back and see me when you've leveled up a bit...'".format(name.capitalize()))
+            Printer.wait_for_input()
+
     def inventory_select(invList):
         validated = False
         print()
@@ -397,6 +415,8 @@ class Printer:
                 choice = "d"
             elif choice.lower() == "inv":
                 choice = "inventory"
+            elif choice.lower() == "doctor john":
+                choice = "doctor"
             if choice.lower() in valid_choices:
                 validated = True
                 return choice

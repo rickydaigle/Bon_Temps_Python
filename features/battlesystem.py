@@ -16,24 +16,96 @@ class Battle:
         Begins a battle between the player and a mob.
         """
         battle = True
+        playerClass = player.get_class()
         print()
         print("A battle has begun!")
         while battle:
             if player.player_alive():
-                print()
-                time.sleep(1)
-                missChance = random.random()
-                if missChance > mob.get_defense_chance():
-                    attackSuccess = random.random()
-                    defenseSuccess = random.random()
-                    damageToMob = int(round(((totalAttack * (attackSuccess * 2)) + int(player.get_level())) - ((int(mob.get_defense()) * defenseSuccess) + int(mob.get_level()))))
-                    if damageToMob > 0:
-                        print("You {} the {} for {} damage!".format(player.get_attack_verb(), mob.print_name(), damageToMob))
-                        mob.lose_health(damageToMob)
+                if playerClass == "newb" or playerClass == "hunter" or playerClass == "hero":
+                    print()
+                    time.sleep(1)
+                    missChance = random.random()
+                    if missChance > mob.get_defense_chance():
+                        attackSuccess = random.random()
+                        defenseSuccess = random.random()
+                        damageToMob = int(round(((totalAttack * (attackSuccess * 2)) + int(player.get_level())) - ((int(mob.get_defense()) * defenseSuccess) + int(mob.get_level()))))
+                        if damageToMob > 0:
+                            print("You {} the {} for {} damage!".format(player.get_attack_verb(), mob.print_name(), damageToMob))
+                            mob.lose_health(damageToMob)
+                        else:
+                            print("Your {} missed!".format(player.get_attack_verb()))
                     else:
-                        print("Your {} missed!".format(player.get_attack_verb()))
-                else:
-                    print("The {} managed to {} your {}!".format(mob.print_name(), mob.get_defense_verb(), player.get_attack_verb()))
+                        print("The {} managed to {} your {}!".format(mob.print_name(), mob.get_defense_verb(), player.get_attack_verb()))
+                    if playerClass == "hunter" or playerClass == "hero":
+                        time.sleep(1)
+                        missChance = random.random()
+                        if missChance > mob.get_defense_chance():
+                            attackSuccess = random.random()
+                            defenseSuccess = random.random()
+                            damageToMob = int(round(((totalAttack * (attackSuccess * 2)) + int(player.get_level())) - ((int(mob.get_defense()) * defenseSuccess) + int(mob.get_level()))))
+                            if damageToMob > 0:
+                                print("You {} the {} for {} damage!".format(player.get_attack_verb(), mob.print_name(), damageToMob))
+                                mob.lose_health(damageToMob)
+                            else:
+                                print("Your {} missed!".format(player.get_attack_verb()))
+                        else:
+                            print("The {} managed to {} your {}!".format(mob.print_name(), mob.get_defense_verb(), player.get_attack_verb()))
+                    if playerClass == "hero":
+                        time.sleep(1)
+                        missChance = random.random()
+                        if missChance > mob.get_defense_chance():
+                            attackSuccess = random.random()
+                            defenseSuccess = random.random()
+                            damageToMob = int(round(((totalAttack * (attackSuccess * 2)) + int(player.get_level())) - ((int(mob.get_defense()) * defenseSuccess) + int(mob.get_level()))))
+                            if damageToMob > 0:
+                                print("You {} the {} for {} damage!".format(player.get_attack_verb(), mob.print_name(), damageToMob))
+                                mob.lose_health(damageToMob)
+                            else:
+                                print("Your {} missed!".format(player.get_attack_verb()))
+                        else:
+                            print("The {} managed to {} your {}!".format(mob.print_name(), mob.get_defense_verb(), player.get_attack_verb()))
+                elif playerClass == "voodoo" or playerClass == "mambo":
+                    print()
+                    time.sleep(1)
+                    missChance = random.random()
+                    if missChance > mob.get_defense_chance():
+                        attackSuccess = random.random()
+                        attackSuccess2 = random.random()
+                        if attackSuccess2 > attackSuccess:
+                            attackSuccess = attackSuccess2
+                        defenseSuccess = random.random()
+                        defenseSuccess2 = random.random()
+                        if defenseSuccess2 < defenseSuccess:
+                            defenseSuccess = defenseSuccess2
+                        damageToMob = int(round(((totalAttack * (attackSuccess * 2.4)) + int(player.get_level())) - ((int(mob.get_defense()) * defenseSuccess) + int(mob.get_level()))))
+                        if damageToMob > 0:
+                            print("You {} the {} for {} damage!".format(player.get_attack_verb(), mob.print_name(), damageToMob))
+                            mob.lose_health(damageToMob)
+                        else:
+                            print("Your {} missed!".format(player.get_attack_verb()))
+                    else:
+                        print("The {} managed to {} your {}!".format(mob.print_name(), mob.get_defense_verb(), player.get_attack_verb()))
+                    if playerClass == "mambo":
+                        print()
+                        time.sleep(1)
+                        missChance = random.random()
+                        if missChance > mob.get_defense_chance():
+                            attackSuccess = random.random()
+                            attackSuccess2 = random.random()
+                            if attackSuccess2 > attackSuccess:
+                                attackSuccess = attackSuccess2
+                            defenseSuccess = random.random()
+                            defenseSuccess2 = random.random()
+                            if defenseSuccess2 < defenseSuccess:
+                                defenseSuccess = defenseSuccess2
+                            damageToMob = int(round(((totalAttack * (attackSuccess * 2.2)) + int(player.get_level())) - ((int(mob.get_defense()) * defenseSuccess) + int(mob.get_level()))))
+                            if damageToMob > 0:
+                                print("You {} the {} for {} damage!".format(player.get_attack_verb(), mob.print_name(), damageToMob))
+                                mob.lose_health(damageToMob)
+                            else:
+                                print("Your {} missed!".format(player.get_attack_verb()))
+                        else:
+                            print("The {} managed to {} your {}!".format(mob.print_name(), mob.get_defense_verb(), player.get_attack_verb()))
                 if mob.mob_alive():
                     time.sleep(1)
                     if missChance > player.get_defense_chance():

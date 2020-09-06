@@ -11,8 +11,8 @@ class Npc:
         "martin":{"desc":"Riggs", "type":"class", "classType":"hunter", "welcome":"Guys like you don't die in the cahbin."},
         "harry":{"desc":"Callahan", "type":"class", "classType":"hero", "welcome":"You feeling lucky, cuz?"},
         "john":{"desc":"McClain", "type":"class", "classType":"hero", "welcome":"Yippee Ki Yay, mere putain!"},
-        "marie":{"desc":"laveau", "type":"class", "classType":"voodoo", "welcome":"You wanna learn da Dark Arts, boo?."},
-        "doctor john":{"of the Bayou":"", "type":"class", "classType":"mambo", "welcome":"Do you believe this is real?"}
+        "marie":{"desc":"Laveau", "type":"class", "classType":"voodoo", "welcome":"You wanna learn da Dark Arts, boo?."},
+        "doctor":{"desc":"John", "type":"class", "classType":"mambo", "welcome":"Do you believe this is real?"}
         }
     
     def print_desc(npc):
